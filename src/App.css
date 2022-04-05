@@ -1,0 +1,11 @@
+.container {
+  max-width: 500px;
+  margin: 30px auto;
+  /*controla o que acontece com conteúdo que é muito grande para caber em uma área.*/
+  overflow: auto;
+  min-height: 300px;
+  border: 2px solid chartreuse;
+  padding: 30px;
+  border-radius: 10px;
+  
+}
