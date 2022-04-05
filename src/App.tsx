@@ -1,6 +1,6 @@
 import './App.css'
 import { useState } from "react"
-import Tasks from './components/Task/Tasks'
+import {Task, Tasks} from './components/Task/index'
 
 // function App() {
 //   const [tasks, setTasks] = useState<string[]>([
@@ -44,8 +44,7 @@ function App() {
   return (
     <>
       <div className="container">
-        <h1>Eae</h1>
-        <Tasks tasks={tarefas}/>
+        <Task id={1} title={"Alguma coisa"} completed={false}/>
       </div>
     </>
   )
