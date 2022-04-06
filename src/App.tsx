@@ -2,6 +2,7 @@ import './App.css'
 import { useState } from "react"
 import {ITaskProps} from './components/Task/Task'
 import Tasks from './components/Task/Tasks'
+import AddTask from './components/Button/AddTask'
 
 // function App() {
 //   const [tasks, setTasks] = useState<string[]>([
@@ -49,9 +50,9 @@ function App() {
   return (
     <>
       <div className="container">
+        <AddTask/>
         <Tasks tasks={tarefas}/>
 
-        <button onClick={insereTasks}>Inserir Task</button>
       </div>
     </>
   )

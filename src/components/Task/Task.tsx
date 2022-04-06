@@ -13,10 +13,10 @@ function isCompleted(status: boolean){
 
 const Task = (props: ITaskProps) => {
     return (
-        <div className='task'>
-            <h4>Id: {props.id}</h4>
-            <h4>Title: {props.title}</h4>
-            <h4>Completed: {isCompleted(props.completed)} </h4>
+        <div className='task-container'>
+            <h4> Id: {props.id} </h4>
+            <h4> Title: {props.title} </h4>
+            <h4> Completed: {isCompleted(props.completed)}</h4> 
         </div>
     )
 }
