@@ -7,16 +7,14 @@ interface ITaskProps{
 }
 
 function isCompleted(status: boolean){
-    if(status) return "Completado"
-    return "Não completado"
+    if(status) return "true"
+    return "false"
 }
 
 const Task = (props: ITaskProps) => {
     return (
         <div className='task-container'>
-            <h4> Id: {props.id} </h4>
-            <h4> Title: {props.title} </h4>
-            <h4> Completed: {isCompleted(props.completed)}</h4> 
+            <h4> {props.title} </h4>
         </div>
     )
 }

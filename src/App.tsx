@@ -1,6 +1,6 @@
 import './App.css'
 import { useState } from "react"
-import {ITaskProps} from './components/Task/Task'
+import { ITaskProps } from './components/Task/Task'
 import Tasks from './components/Task/Tasks'
 import AddTask from './components/Button/AddTask'
 
@@ -30,7 +30,7 @@ import AddTask from './components/Button/AddTask'
 // }
 
 function App() {
-  const [tarefas, setTasks] = useState<Array<ITaskProps>>([
+  const [tasks, setTasks] = useState<Array<ITaskProps>>([
     {
       id: 1,
       title: 'Aprendendo React',
@@ -43,15 +43,22 @@ function App() {
     }
   ])
 
-  function insereTasks(){
-    setTasks([...tarefas, {id: 3, title: "terceiro", completed: false}])
+
+  const handleTaskAddition = (taskTitle: any) => {
+    const newTasks = [...tasks, {
+      id: 10,
+      title: taskTitle,
+      completed: false
+    }]
+
+    setTasks(newTasks)
   }
 
   return (
     <>
       <div className="container">
-        <AddTask/>
-        <Tasks tasks={tarefas}/>
+        <AddTask handleTaskAddition={handleTaskAddition}/>
+        <Tasks tasks={tasks} />
 
       </div>
     </>

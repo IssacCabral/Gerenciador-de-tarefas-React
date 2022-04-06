@@ -1,10 +1,11 @@
-import './style.css'
+import './button.css'
 
-const Button = () => {
+
+const Button = ({children, onClick}: any) => {
     return (
         <div>
-            <button className='button'>
-                
+            <button className='add-button' onClick={onClick}>
+                {children}
             </button>
         </div>
     )
