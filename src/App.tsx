@@ -1,6 +1,7 @@
 import './App.css'
 import { useState } from "react"
-import {Task, Tasks} from './components/Task/index'
+import {ITaskProps} from './components/Task/Task'
+import Tasks from './components/Task/Tasks'
 
 // function App() {
 //   const [tasks, setTasks] = useState<string[]>([
@@ -28,7 +29,7 @@ import {Task, Tasks} from './components/Task/index'
 // }
 
 function App() {
-  const [tarefas, setTasks] = useState([
+  const [tarefas, setTasks] = useState<Array<ITaskProps>>([
     {
       id: 1,
       title: 'Aprendendo React',
@@ -41,10 +42,16 @@ function App() {
     }
   ])
 
+  function insereTasks(){
+    setTasks([...tarefas, {id: 3, title: "terceiro", completed: false}])
+  }
+
   return (
     <>
       <div className="container">
-        <Task id={1} title={"Alguma coisa"} completed={false}/>
+        <Tasks tasks={tarefas}/>
+
+        <button onClick={insereTasks}>Inserir Task</button>
       </div>
     </>
   )

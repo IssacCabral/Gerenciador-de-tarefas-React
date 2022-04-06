@@ -1,8 +1,14 @@
 import './style.css'
+
 interface ITaskProps{
     id: number,
     title: string,
     completed: boolean
+}
+
+function isCompleted(status: boolean){
+    if(status) return "Completado"
+    return "Não completado"
 }
 
 const Task = (props: ITaskProps) => {
@@ -10,20 +16,10 @@ const Task = (props: ITaskProps) => {
         <div className='task'>
             <h4>Id: {props.id}</h4>
             <h4>Title: {props.title}</h4>
-            {if(props.completed === true) {
-                
-            }}
-            <h4>Completed:</h4>
+            <h4>Completed: {isCompleted(props.completed)} </h4>
         </div>
     )
 }
 
-const Tasks = (props: any) => {
-    return (
-        <div>
-            <h1>Tudo ok por aqui</h1>
-        </div>
-    )
-}
-
-export {Task, Tasks}
+export type {ITaskProps}
+export {Task}
