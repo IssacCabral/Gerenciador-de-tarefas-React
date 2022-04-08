@@ -44,9 +44,20 @@ function App() {
   ])
 
 
+  function handleTaskClick(taskId: number){
+    const newTasks = tasks.map(task => {
+      if(taskId == task.id){
+        return {...task, completed: !task.completed}
+      }
+      return task
+    })
+
+    setTasks(newTasks)
+  }
+
   const handleTaskAddition = (taskTitle: any) => {
     const newTasks = [...tasks, {
-      id: 10,
+      id: Math.random(),
       title: taskTitle,
       completed: false
     }]
@@ -57,8 +68,8 @@ function App() {
   return (
     <>
       <div className="container">
-        <AddTask handleTaskAddition={handleTaskAddition}/>
-        <Tasks tasks={tasks} />
+        <AddTask handleTaskAddition={handleTaskAddition} />
+        <Tasks tasks={tasks} handleTaskClick={handleTaskClick}/>
 
       </div>
     </>
